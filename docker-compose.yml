@@ -1,0 +1,20 @@
+version: "3"
+
+networks:
+  ticker-net:
+    driver: bridge
+
+volumes:
+  ticker_data: {}
+
+services:
+
+  discordstockticker:
+    image: ghcr.io/rssnyder/discord-stock-ticker:3.10.2
+    environment:
+      - DB=/dst.db
+      - CACHE=true
+    volumes:
+      - ticker_data:/dst.db
+    ports:
+      - "8112:8080"
