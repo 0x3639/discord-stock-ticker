@@ -12,7 +12,7 @@ services:
   discordstockticker:
     image: ghcr.io/rssnyder/discord-stock-ticker:3.10.2
     environment:
-      - DB=/dst.db
+      - DB=dst.db
       - CACHE=true
     volumes:
       - ticker_data:/dst.db
