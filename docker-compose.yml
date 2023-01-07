@@ -16,5 +16,7 @@ services:
       - CACHE=true
     volumes:
       - ./dst.db:/dst.db
+    networks:
+      - ticker-net  
     ports:
       - "8112:8080"
